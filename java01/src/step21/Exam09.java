@@ -27,7 +27,7 @@ public class Exam09 {
     set.add(new String("유관순"));
     set.add(new String("홍길동"));
     set.add(new String("임꺽정"));
-
+    
     printList(list);
     printList(set);
 

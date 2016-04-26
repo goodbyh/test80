@@ -1,4 +1,4 @@
-package step23;
+package step23.step01;
 
 public class StringTest {
   public static void main(String[] args) {

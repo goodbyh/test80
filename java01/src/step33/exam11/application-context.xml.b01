@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 및 모든속성이 xmlns에 소속되어있다./// 이건 xml 스키마 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+   <!--애노테이션붙은 멤버디에이오만 객체를 만든다.-->
+     <context:component-scan base-package="step33.exam11"/>
+      <!-- Mybatis SQL Session -->
+      <bean id="sqlSessiongFactory" 
+              class="step33.exam11.SqlSessionFactoryFactoryBean">
+        <property name="configLocation" value="step33/exam11/mybatis-config.xml"/>
+      </bean>
+      
+      <!-- 
+      Map<String,Object> objPool = new HashMap<>();
+      SqlSessionFactoryFactory obj = new SqlSessionFactoryFactoryBean();
+      obj.setConfigLocation("setp33/exam11/");
+      if(FactoryBean.class.isInstance(obj)) {
+      Object obj2 - obj.getObject();
+      objPool.put("sqlSessionFactory",obj2);
+      } else {
+      objPool.put("sqlSessionFactory",obj);
+      }
+       -->
+</beans>

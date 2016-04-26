@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 및 모든속성이 xmlns에 소속되어있다./// 이건 xml 스키마 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="e1" class="step33.exam04.Engine">
+      <property name="cc" value="3000"/>
+      <property name="valve" value="16"/>
+      <property name="type" value="디젤"/>
+    </bean>
+    <bean id="e2" class="step33.exam04.Engine">
+      <property name="cc" value="800"/>
+      <property name="valve" value="16"/>
+      <property name="type" value="가솔린"/>
+    </bean>
+    
+    
+    <bean id="c1" class="step33.exam04.Car">
+      <property name="model" value="소나타"/>
+      <property name="maker" value="비트자동차"/>
+      <property name="engine">
+      <ref bean="e1"></ref>
+      </property>
+      
+    </bean>
+    
+    <bean id="c2" class="step33.exam04.Car">
+      <property name="model" value="티코"/>
+      <property name="maker" value="비트자동차"/>
+      <property name="engine" ref="e2"/>
+ 
+      
+      
+    </bean>
+    
+    
+    
+</beans>

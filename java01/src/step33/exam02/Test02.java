@@ -12,6 +12,7 @@ public class Test02 {
         new ClassPathXmlApplicationContext(
             "step33/exam02/application-context02.xml");
     System.out.println(context.getBean("c1"));
+    
     System.out.println(context.getBean("c2"));
     System.out.println(context.getBean("c3"));
     //System.out.println(context.getBean("c4"));

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 및 모든속성이 xmlns에 소속되어있다./// 이건 xml 스키마 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- FactoryBean 구현체를 통해 객체를 준비하기 
+      class속성에 FactroyBean 인터페이스를 구현한 클래스를 지정한다.
+      구동원리
+      1)카팩토리빈 클래스의 객체를 생선한다.
+        =>셋터 메서드를 호출한다. =>setModel()
+        
+      2)스프링은 CarFactoryBean 클래스가 FactoryBean구현체인지 조사한다.
+      3)만약 factoryBean구현체라면,      ////CarFatoryBean객체를 내부적으로 생헝한다.
+        =>issingleton() 호출하여 싱글톤여부를 확인한다.
+        =>getObjectType()을 호출하여 리턴할 객체의 타입을 확인한다.
+      4)getBean("c1")을 호출하면,
+       =>c1이라는 이름으로 저장된 객체가 없다면 getObject()를 호출한다.
+       =>getObejct()의 리턴값을 "c1"이라는 이름으로 저장한다.
+       =>c1이라는 이름으로 저장된 객체가 있다면,
+       그 객체를 리턴한다.         
+     -->
+    <bean id="c1" class="step33.exam07.CarFactoryBean">
+    <property name="model" value="bitz002"/>
+    </bean>
+    
+    
+
+</beans>

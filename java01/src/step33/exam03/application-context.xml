@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 및 모든속성이 xmlns에 소속되어있다./// 이건 xml 스키마 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 셋터호출
+      => property 이름 = setter -"set" + 첫 알파벳 소문자
+      attribute=field   property=setter,getter
+      빈컨테이너는 셋터를 호출할 때 문자열ㅇ르 아규먼트 타입에맞게 자동으로 바꾼다.
+      단, primitive type에 대해서만 자동으로 변경한다. -->
+    <bean id="c1" class="step33.exam03.Car">
+      <property name="model"><value>티코</value></property>
+      <property name="cc"><value>800</value></property>
+      <property name="maker"><value>비트자동차</value></property>
+    </bean>
+    
+    <!-- value 태그 대신 value 속성 사용하기 값이 또다른 객체라면 위에꺼 쓴다.(빈이라는 태그)
+    단순 문자열이면 아래꺼-->
+    <bean id="c2" class="step33.exam03.Car">
+      <property name="model" value="소나타"/>
+      <property name="cc" value="1980"/>
+      <property name="maker" value="비트자동차"/>
+    </bean>
+    
+</beans>

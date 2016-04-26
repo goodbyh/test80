@@ -3,8 +3,8 @@
 //    인사말을 출력하는 프로그램을 작성한다.
 // => 한국어와 영어로 인사말을 생성하는 클래스를 작성한다.
 //    한국어: Hello
-/     영어: HelloEn
-package step23;
+//   영어: HelloEn
+package step23.step01;
 
 public class Test {
   public static void main(String[] args) {

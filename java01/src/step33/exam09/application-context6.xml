@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- beans 및 모든속성이 xmlns에 소속되어있다./// 이건 xml 스키마 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    
+    <bean id="c1" class="step33.exam09.Car4">
+      <property name="model" value="티코"/>
+      <property name="maker" value="비트자동타"/>
+      <!-- @Resource =@Autowired + @Qualifier
+       -->
+    </bean>
+      <!--  주입가능한 의존객체가 여러개 있을 경우 , 어떤 객체를 주입할까?
+      예외 발생! 
+      해결책
+        @Qualifier를 사용하여 주입할 객체를 지정해야 한다.
+      -->
+    <bean id="e1" class="step33.exam09.Engine">
+      <property name="cc" value="800"/>
+      <property name="valve" value="16"/>
+      <property name="type" value="가솔린"/>
+    </bean>
+    
+    <bean id="e2" class="step33.exam09.Engine">
+      <property name="cc" value="3000"/>
+      <property name="valve" value="16"/>
+      <property name="type" value="가솔린"/>
+    </bean>
+    <!-- 다음과 같이 특정 애노테이션을 처리할 객체를 등록하려면,
+    => 그 클래스가 무엇인지 알아야하고 기억해야 한다.
+    => 또한 다음과 같이 긴 문장을 설정파일에 추가해야 한다.
+    너무 번거롭다.
+   => 그래서 스프링은 단축 태그를 추가하였다.
+     -->
+     
+     <!-- 
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <context:annotation-config/>
+     -->
+     
+
+</beans>
